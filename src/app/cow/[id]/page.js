@@ -9,10 +9,11 @@ async function getCow(id) {
 const cowPage = async function ({ params }) {
   const cow = await getCow(params.id)
   const { attributes } = cow;
-  const { name, img, description } = attributes;
+  const { name, img, description, createdAt } = attributes;
+  const born = new Date(createdAt).toLocaleDateString('es-CL');
   console.log(cow)
   return (
-    <div className='w-2/3 flex flex-col items-start gap-4'>
+    <div className='w-full md:w-2/3 flex flex-col items-start gap-4'>
     <Link href="/" className="border-white border-2 rounded-md p-4 my-4">🐄 Go Back to tail...</Link>
       <div className='flex w-full flex-col items-center justify-around'>
         <h2 className='text-4xl'>
@@ -22,7 +23,7 @@ const cowPage = async function ({ params }) {
           <img src={img.data.attributes.url} height="300" width="300" alt="" />
         }
         <p className='my-4 p-4 text-xl'> { description } </p>
-        
+        <i>born at: {born}</i>
       </div>
     </div>
   )
