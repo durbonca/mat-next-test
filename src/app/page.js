@@ -20,7 +20,7 @@ export default async function Home() {
             { attributes.img &&
               <Img src={attributes.img.data.attributes.url} height="100" width="100" alt="" />
             }
-            <h1 className='text-4xl md:text-6xl'>{attributes.name}</h1>
+            <h1 className='text-white text-4xl md:text-6xl'>{attributes.name}</h1>
           </Link>
         )
       )}
