@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Img from 'next/image'
 
 async function getCow(id) {
-  const response = await fetch(`https://mattel-back.onrender.com/api/cows/${id}?populate=img`, { next: { revalidate: 300 } })
+  const response = await fetch(`https://mattel-back.onrender.com/api/cows/${id}?populate=img`, { next: { revalidate: 60 } })
   const cow = await response.json()
   if (!cow.data) return { name: '🐄', description: '🐄', born: '🐄', img: null }
   const { name, img, description, createdAt } = cow.data.attributes; 
