@@ -21,7 +21,8 @@ const cowPage = async function ({ params }) {
         { img &&
           <img src={img.data.attributes.url} height="300" width="300" alt="" />
         }
-        <p className='text-xl'> { description } </p>
+        <p className='my-4 p-4 text-xl'> { description } </p>
+        
       </div>
     </div>
   )
