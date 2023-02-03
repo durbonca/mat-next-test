@@ -11,7 +11,6 @@ const cowPage = async function ({ params }) {
   const { attributes } = cow;
   const { name, img, description, createdAt } = attributes;
   const born = new Date(createdAt).toLocaleDateString('es-CL');
-  console.log(cow)
   return (
     <div className='w-full md:w-2/3 flex flex-col items-start gap-4'>
     <Link href="/" className="border-white border-2 rounded-md p-4 my-4">🐄 Go Back to tail...</Link>
