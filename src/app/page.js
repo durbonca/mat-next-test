@@ -22,7 +22,9 @@ export default async function Home() {
           </div>
           )
         )}
-      <iframe src="https://player.vimeo.com/video/795681841?h=f92d8b0312" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+      <div className="rounded-xl overflow-hidden">
+        <iframe src="https://player.vimeo.com/video/795681841?h=f92d8b0312" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+      </ div>
       </div>
     </main>
   )
