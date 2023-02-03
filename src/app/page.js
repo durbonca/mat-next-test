@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Img from "next/image";
 
 async function getCows() {
   const response = await fetch('https://mattel-back.onrender.com/api/cows?populate=img', { next: { revalidate: 300 } })
@@ -17,7 +18,7 @@ export default async function Home() {
             className="flex items-center rounded-lg shadow-xl p-1 md:p-6 border-white border-2 w-full md:w-1/2 flex-auto gap-4"
           >
             { cow.attributes.img &&
-              <img src={cow.attributes.img.data.attributes.url} height="100" width="100" alt="" />
+              <Img src={cow.attributes.img.data.attributes.url} height="100" width="100" alt="" />
             }
             <h1 className='text-6xl'>{cow.attributes.name}</h1>
           </Link>

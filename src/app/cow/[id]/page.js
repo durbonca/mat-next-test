@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Img from 'next/image'
 
 async function getCow(id) {
   const response = await fetch(`https://mattel-back.onrender.com/api/cows/${id}?populate=img`, { next: { revalidate: 300 } })
@@ -6,8 +7,8 @@ async function getCow(id) {
   return cow.data
 }
 
-const cowPage = async function ({ params }) {
-  const cow = await getCow(params.id)
+const cowPage = async function ({ params: {id} }) {
+  const cow = await getCow(id)
   const { attributes } = cow;
   const { name, img, description, createdAt } = attributes;
   const born = new Date(createdAt).toLocaleDateString('es-CL');
@@ -19,7 +20,7 @@ const cowPage = async function ({ params }) {
           { name }
         </h2>
         { img &&
-          <img src={img.data.attributes.url} height="300" width="300" alt="" />
+          <Img src={img.data.attributes.url} height="300" width="300" alt="" />
         }
         <p className='my-4 p-4 text-xl'> { description } </p>
         <i>born at: {born}</i>
