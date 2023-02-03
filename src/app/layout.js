@@ -11,9 +11,9 @@ export default function RootLayout({ children }) {
       <body className="bg-gradient-to-tl from-gray-700 to-black">
       <main className='w-full py-8'>
         <div className="flex items-center justify-center flex-col gap-5 p-4">
-          <h1 className='text-center text-6xl'>WE-LOVE-COWS.com !!!</h1>
+          <h1 className='text-center text-2xl md:text-6xl'>WE-LOVE-COWS.com !!!</h1>
           <div className="rounded-xl overflow-hidden mb-10">
-            <iframe src="https://player.vimeo.com/video/795681841?h=f92d8b0312" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            <iframe className='w-[350px] h-auto md:w-[50vw]' src="https://player.vimeo.com/video/795681841?h=f92d8b0312" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
           </ div>
           {children}
         </div>

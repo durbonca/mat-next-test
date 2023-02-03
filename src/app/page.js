@@ -11,16 +11,16 @@ export default async function Home() {
   const cows = await getCows();
   return (
     <>
-      {cows.map( (cow) => (
+      {cows.map( ({ id, attributes }) => (
           <Link 
-            key={cow.id}
-            href={`/cow/${cow.id}`} 
+            key={id}
+            href={`/cow/${id}`} 
             className="flex items-center rounded-lg shadow-xl p-1 md:p-6 border-white border-2 w-full md:w-1/2 flex-auto gap-4"
           >
-            { cow.attributes.img &&
-              <Img src={cow.attributes.img.data.attributes.url} height="100" width="100" alt="" />
+            { attributes.img &&
+              <Img src={attributes.img.data.attributes.url} height="100" width="100" alt="" />
             }
-            <h1 className='text-6xl'>{cow.attributes.name}</h1>
+            <h1 className='text-4xl md:text-6xl'>{attributes.name}</h1>
           </Link>
         )
       )}
