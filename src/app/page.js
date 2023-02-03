@@ -4,7 +4,7 @@ import Img from "next/image";
 async function getCows() {
   const response = await fetch('https://mattel-back.onrender.com/api/cows?populate=img', { next: { revalidate: 300 } })
   const cows = await response.json()
-  return cows.data
+  return cows.data ? cows.data : []
 }
 
 export default async function Home() {
